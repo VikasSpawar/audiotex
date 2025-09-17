@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from "react";
 import { useAuth } from "../context/AuthContext";
 import ControlPanel from "./ControlPanel";
 import TranscriptPanel from "./TranscriptPanel";
-
+const api = import.meta.env.VITE_API_URL;
 export function Header() {
   return (
     <header className="z-20 border flex sticky top-0 items-center justify-between whitespace-nowrap px-6 sm:px-10 py-6 md:py-8  ">
@@ -297,7 +297,7 @@ const AudioScribe = () => {
       return;
     }
     try {
-      const res = await fetch("http://localhost:5000/api/history", {
+      const res = await fetch(`${api}/history`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -343,7 +343,7 @@ const AudioScribe = () => {
     // console.log(user)
 
     try {
-      const res = await fetch("http://localhost:5000/api/upload", {
+      const res = await fetch(`${api}/upload`, {
         method: "POST",
         headers: { Authorization: `Bearer ${user.access_token}` },
         body: formData,

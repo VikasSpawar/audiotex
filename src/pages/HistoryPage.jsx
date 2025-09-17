@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react";
 import { useAuth } from "../context/AuthContext";
 import { Link } from "react-router-dom";
+const api = import.meta.env.VITE_API_URL;
+
 
 export default function HistoryPage() {
   const { user } = useAuth();
@@ -17,7 +19,7 @@ export default function HistoryPage() {
       setLoading(true);
       if (!user?.access_token) return;
       try {
-        const res = await fetch("http://localhost:5000/api/history", {
+        const res = await fetch(`${api}/history`, {
           headers: { Authorization: `Bearer ${user.access_token}` },
         });
 
@@ -75,7 +77,7 @@ export default function HistoryPage() {
   // Save changes via PUT request & update local state
   const saveChanges = async () => {
     try {
-      const res = await fetch(`http://localhost:5000/api/history/${editData.id}`, {
+      const res = await fetch(`${api}/history/${editData.id}`, {
         method: "PUT",
         headers: {
           "Content-Type": "application/json",
@@ -102,7 +104,7 @@ export default function HistoryPage() {
     let transcriptionId = id || editData.id;
     // if (!window.confirm("Are you sure you want to delete this transcription?")) return;
     try {
-      const res = await fetch(`http://localhost:5000/api/history/${transcriptionId}`, {
+      const res = await fetch(`${api}/history/${transcriptionId}`, {
         method: "DELETE",
         headers: { Authorization: `Bearer ${user.access_token}` },
       });
