@@ -5,9 +5,9 @@ import { AuthProvider } from "./context/AuthContext";
 import HistoryPage from "./pages/HistoryPage";
 import HomePage from "./pages/HomePage";
 import LoginPage from "./pages/LoginPage";
+import ResetPasswordWrapper from "./pages/ResetPassword";
 import SignupPage from "./pages/SignupPage";
 import PrivateRoute from "./routes/PrivateRoute";
-import ResetPasswordPage from "./pages/ResetPassword";
 
 export default function App() {
   return (
@@ -33,7 +33,7 @@ export default function App() {
           />
           <Route path="/login" element={<LoginPage />} />
           <Route path="/signup" element={<SignupPage />} />
-          <Route path="/reset-password" element={<ResetPasswordPage />} />
+          <Route path="/reset-password" element={<ResetPasswordWrapper />} />
         </Routes>
       </Router>
     </AuthProvider>
