@@ -125,7 +125,7 @@ export default function HistoryPage() {
 
         <div className="flex items-center space-x-4">
           <Link to={'/'} className="flex items-center bg-indigo-600 text-white font-bold py-2 px-4 rounded-lg hover:bg-indigo-700 transition duration-300">
-            <span className="material-icons mr-2">mic</span> Transcription
+            <span className="material-icons mr-2">mic</span> New Transcription
           </Link>
          
         </div>
