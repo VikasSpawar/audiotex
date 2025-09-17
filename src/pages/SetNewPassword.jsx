@@ -45,7 +45,7 @@ export default function SetNewPasswordPage({ accessToken }) {
     } else {
       setSuccess("Password updated successfully! Redirecting to login...");
       setTimeout(() => {
-        navigate("/login");
+        navigate("/");
       }, 3000);
     }
     setLoading(false);
