@@ -15,6 +15,7 @@ function ControlPanel({
         isRecording={isRecording}
         startRecording={startRecording}
         stopRecording={stopRecording}
+        status={status}
       />
  
      <label

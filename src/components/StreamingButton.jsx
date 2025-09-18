@@ -2,7 +2,7 @@
 import React from "react";
 import MicOnAnimation from "./MicOnAnimation";
 
-const StreamingButton = ({ isRecording, startRecording , stopRecording}) => {
+const StreamingButton = ({ isRecording, startRecording , stopRecording , status}) => {
   return (
     <div className=" relative group flex items-center justify-center">
       {/* Button */}
@@ -23,7 +23,7 @@ const StreamingButton = ({ isRecording, startRecording , stopRecording}) => {
             ${isRecording ? "opacity-0 scale-90 absolute" : "opacity-100 scale-100 relative"}`}
         >
           <i className="material-icons">mic</i>
-          <span className="ml-2 hidden sm:inline">Start Recording</span>
+          <span className="ml-2 hidden sm:inline"> {status=='Connecting...'?'Connecting...' : 'Start Recording'} </span>
         </span>
 
         {/* Recording State */}

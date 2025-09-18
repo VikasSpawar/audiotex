@@ -3,56 +3,8 @@ import { useAuth } from "../context/AuthContext";
 import ControlPanel from "./ControlPanel";
 import TranscriptPanel from "./TranscriptPanel";
 const api = import.meta.env.VITE_API_URL;
-export function Header() {
-  return (
-    <header className="z-20 border flex sticky top-0 items-center justify-between whitespace-nowrap px-6 sm:px-10 py-6 md:py-8  ">
-      <div className="flex items-center border gap-3">
-        <div className="size-8 text-primary">
-          <svg
-            className="w-8 h-8"
-            fill="none"
-            stroke="currentColor"
-            strokeWidth="1.5"
-            viewBox="0 0 24 24"
-            xmlns="http://www.w3.org/2000/svg"
-            aria-hidden="true"
-          >
-            <path
-              d="M12 18.75a6 6 0 006-6v-1.5m-6 7.5a6 6 0 01-6-6v-1.5m12 7.5v-1.5a6 6 0 00-6-6m-6 1.5v-1.5a6 6 0 016-6v1.5m-6 7.5h12a6 6 0 00-6-6v-1.5a6 6 0 00-6 6v1.5m6 7.5v-1.5a6 6 0 00-6-6"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-            />
-          </svg>
-        </div>
-        <h2 className="text-primary text-2xl font-bold tracking-wider">
-          AudioTex
-        </h2>
-      </div>
 
-      <nav className="shadow-md hidden md:flex items-center gap-10 text-sm font-medium  rounded-full px-3 py-2 bg-white">
-        <a href="#" className="text-secondary hover:text-primary transition">
-          Features
-        </a>
-        <a href="#" className="text-secondary hover:text-primary transition">
-          Pricing
-        </a>
-        <a href="#" className="text-secondary hover:text-primary transition">
-          Support
-        </a>
-        <button className="bg-primary text-white h-10 rounded-full px-6 font-semibold hover:opacity-90 shadow-md transition-opacity duration-200">
-          Get Started
-        </button>
-      </nav>
 
-      <button
-        className="md:hidden text-secondary hover:text-primary"
-        aria-label="Open menu"
-      >
-        <i className="material-icons">menu</i>
-      </button>
-    </header>
-  );
-}
 
 const AudioScribe = () => {
   const [words, setWords] = useState([]);
@@ -105,7 +57,7 @@ const AudioScribe = () => {
     }
 
     const socket = new WebSocket(
-      "ws://localhost:5000/api/transcription/stream"
+      `${api.replace(/^http/, "ws")}/transcription/stream`
     );
     uploadSocketRef.current = socket;
 
@@ -177,7 +129,7 @@ const AudioScribe = () => {
     setTranscript("");
     setStatus("Connecting...");
     const socket = new WebSocket(
-      "ws://localhost:5000/api/transcription/stream"
+      `${api.replace(/^http/, "ws")}/transcription/stream`
     );
 
     socket.onopen = async () => {
@@ -371,7 +323,7 @@ const AudioScribe = () => {
     }
     setUploading(false);
   };
-
+console.log(status);
   return (
     <div className="relative  flex min-h-screen flex-col bg-background group/design-root">
       {/* <Header /> */}
