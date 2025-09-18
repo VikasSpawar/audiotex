@@ -1,12 +1,78 @@
-# React + Vite
+# 🎙️ Audiotex
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Audiotex is a modern **AI-powered transcription app** built with **React (Vite)** and **TailwindCSS**, featuring **real-time speech-to-text streaming** with [AssemblyAI](https://www.assemblyai.com/) and **authentication with Supabase**.  
+It lets you record audio, upload files, and manage transcription history securely.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🔗 Live Preview
 
-## Expanding the ESLint configuration
+[Try Audiotex ](https://audiotex-kappa.vercel.app/) 
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+---
+
+## ✨ Features
+- 🔐 **Authentication** – User login, signup, and password reset (via Supabase Auth).  
+- 🎤 **Live Recording** – Stream microphone input to AssemblyAI in real time.  
+- 📂 **File Upload** – Upload audio files for transcription.  
+- 📝 **History Management** – Save, edit, and delete past transcriptions.  
+- 🎨 **Modern UI** – Styled with TailwindCSS, responsive, and user-friendly.  
+- 🔒 **Protected Routes** – Private pages accessible only after login.  
+
+---
+
+## 🛠️ Tech Stack
+- **Frontend**: React (Vite), Tailwind CSS  
+- **Auth & DB**: Supabase  
+- **Transcription API**: AssemblyAI  
+- **Deployment**: Vercel  
+
+---
+
+## 🚀 Getting Started
+
+### 1. Clone the repo
+```bash
+git clone https://github.com/your-username/audiotex.git
+cd audiotex
+2. Install dependencies
+npm install
+
+3. Set up environment variables
+Create a .env file in the root directory with:
+VITE_SUPABASE_URL=your-supabase-url
+VITE_SUPABASE_ANON_KEY=your-supabase-anon-key
+VITE_ASSEMBLYAI_API_KEY=your-assemblyai-api-key
+
+4. Start the dev server
+npm run dev
+
+📜 Scripts
+
+npm run dev – Start dev server
+
+npm run build – Build for production
+
+npm run preview – Preview production build
+
+npm run lint – Run linter
+
+📦 Deployment
+This project is deployed on Vercel. Make sure to set your environment variables in the Vercel dashboard.
+
+🤝 Contributing
+Contributions are welcome!
+
+Fork the repo
+
+Create a new branch (feature/my-feature)
+
+Commit changes
+
+Open a PR
+
+📄 License
+This project is licensed under the MIT License.
+
+👨‍💻 Author
+Built by Vikas Pawar ✨
