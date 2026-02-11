@@ -4,6 +4,7 @@ import ControlPanel from "./ControlPanel";
 import TranscriptPanel from "./TranscriptPanel";
 const api = import.meta.env.VITE_API_URL;
 
+// const api = 'http://localhost:5000/api' 
 
 
 const AudioScribe = () => {
@@ -42,10 +43,7 @@ const AudioScribe = () => {
     }
   }, [transcript]);
 
-  // Methods (streamAudioFile, startRecording, stopRecording, handleTranscriptChange, copyToClipboard, downloadTranscript, handleUploadInput)
-  // ... use your existing method implementations here ...
 
-  // For brevity, only your return JSX and segregation are shown
 
   // Helper: Stream audio file chunks over WebSocket for upload (existing logic)
   const streamAudioFile = (file) => {
@@ -125,6 +123,14 @@ const AudioScribe = () => {
   };
 
   const startRecording = async () => {
+
+
+    
+      if (isRecording || wsRef.current) {
+    console.log("Already recording...");
+    return;
+  }
+
     setWords([]);
     setTranscript("");
     setStatus("Connecting...");
