@@ -1,0 +1,23 @@
+@import "tailwindcss";
+
+
+    @theme{
+      --color-primary: #5E72E4;
+      --color-secondary: #8898AA;
+      --color-background: #f7f8fa;
+      --text-primary: #32325d;
+      --text-secondary: #525f7f;
+      --color-accent: #11cdef;
+      --background-card: #ffffff;
+      --color-border: #e9ecef;
+    }
+
+    @layer utilities {
+  .animate-pulse-sphere {
+    animation: pulse-sphere 1s ease-in-out infinite;
+  }
+  @keyframes pulse-sphere {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.5); }
+  }
+}

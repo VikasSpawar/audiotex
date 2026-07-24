@@ -1,0 +1,12 @@
+ body {
+      font-family: 'Roboto', sans-serif;
+      background-color: #f7f8fa;
+      color: var(--text-primary);
+    }
+    h1, h2, h3, h4, h5, h6 {
+      font-family: 'Playfair Display', serif;
+    }
+  /* hide scroll bar */
+    ::-webkit-scrollbar {
+      display: none;
+    }
